@@ -16,8 +16,17 @@ def main():
     print(len(col_names))
     print(col_names[:5], col_names[-5:])
     nations = dat['Nationality']
+    counts = nations.value_counts()
+    print(type(counts), counts.shape, counts.name)
+    print(counts[:5])
+    count_inds = counts.index
+    print(type(count_inds), count_inds.shape)
+    cinds = count_inds.values
+    print(type(cinds), cinds.shape, cinds[:5])
+    nations = nations[:4]
     print(nations.shape)
-    nations.apply(pd.value_counts).plot.pie(subplots=True)
+    counts.plot.pie(label="sample label", autopct="%.2f%%", title="Nationality Distribution: FIFA 19 Players")
+    plt.savefig('f19_nationality.png')
     plt.show()
 
 if __name__ == '__main__':
