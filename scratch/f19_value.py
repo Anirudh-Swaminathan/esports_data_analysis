@@ -10,17 +10,20 @@ def main():
     dat = pd.read_csv("../../../datasets/fifa19/data.csv")
     col_names = list(dat.columns.values)
     values = dat['Value']
+    print(values[:3], values[-3:])
+    values = values.apply(lambda x: x[1:])
+    print(values[:3], values[-3:])
+    # values = values.apply(lambda x: float(x[:-1]))
+    values = values.apply(lambda x: float(x[:-1])*1e6 if "m" in x.lower() else (float(x[:-1])*1000 if "k" in x.lower() else float(x)))
+    # values = values.apply(lambda x: float(x[:-1])*1000 if "k" in x.lower() else float(x))
+    print(values[:3], values[-3:])
     print(type(values), values.shape, values.dtype)
     counts = pd.cut(values, bins=5, labels=False, retbins=True)
-    print(type(counts), counts.shape, counts.name)
-    print(counts[:5])
-    count_inds = counts.index
-    print(type(count_inds), count_inds.shape)
-    cinds = count_inds.values
-    print(type(cinds), cinds.shape, cinds[:5])
-    counts.plot.pie(label="sample label", autopct="%.2f%%", title="Positional Distribution: FIFA 19 Players")
-    plt.savefig('f19_positions.png')
-    plt.show()
+    print(type(counts))#, counts.shape, counts.name)
+    print(len(counts))
+    print(type(counts[0]), type(counts[1]))
+    print(counts[0].shape, counts[1].shape)
+    print(counts[1])
 
 if __name__ == '__main__':
     main()
