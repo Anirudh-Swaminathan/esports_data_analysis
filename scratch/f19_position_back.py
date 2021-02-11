@@ -14,9 +14,9 @@ def scatter_position(x):
     assert len(x) in [2, 3]
     if len(x) == 2:
         xpos = dict()
-        xpos['L'] = 104
-        xpos['C'] = 312
-        xpos['R'] = 520
+        xpos['R'] = 64
+        xpos['C'] = 272
+        xpos['L'] = 480
         ypos = dict()
         ypos['S'] = 700
         ypos['F'] = 600
@@ -24,9 +24,9 @@ def scatter_position(x):
         ypos['M'] = 400
         ypos['B'] = 200
         if x == 'ST':
-            return [312, 700]
+            return [272, 700]
         if x == 'GK':
-            return [312, 20]
+            return [272, 20]
         return [xpos[x[0]], ypos[x[1]]]
     ypos = dict()
     ypos['AM'] = 500
@@ -35,13 +35,13 @@ def scatter_position(x):
     ypos['CB'] = 200
     ypos['WB'] = 300
     if x[1:] == 'WB':
-        if x[0] == 'L':
-            return [104, ypos['WB']]
-        return [520, ypos['WB']]
+        if x[0] == 'R':
+            return [64, ypos['WB']]
+        return [480, ypos['WB']]
     xpos = dict()
-    xpos['L'] = 208
-    xpos['C'] = 312
-    xpos['R'] = 416
+    xpos['R'] = 168
+    xpos['C'] = 272
+    xpos['L'] = 376
     return [xpos[x[0]], ypos[x[1:]]]
 
 def main():
@@ -65,14 +65,27 @@ def main():
     print(type(cinds), cinds.shape, cinds)
     plot_x = list()
     plot_y = list()
+    markerSizes = list()
+    colors = list()
     for cin in cinds:
         xyl = scatter_position(cin)
-        plot_x.append(xyl[0])
-        plot_y.append(xyl[1])
+        plot_x.append(xyl[1])
+        if xyl[1] < 400:
+            colors.append('blue')
+        elif xyl[1]<600:
+            colors.append('yellow')
+        else:
+            colors.append('firebrick')
+        plot_y.append(xyl[0])
+        markerSizes.append(counts[cin]*1000)
+        ax.annotate(cin + "\n{:.2f}%".format(counts[cin]*100.0), (xyl[1], xyl[0]))
     print(len(plot_x), len(plot_y))
     print(plot_x)
     print(plot_y)
-    ax.plot(plot_x, plot_y, color='firebrick')
+    ax.scatter(plot_x, plot_y, color=colors, s=markerSizes)
+    plt.tight_layout()
+    plt.savefig('football_field_positions.png')
+    plt.show()
 
 
 if __name__ == '__main__':
