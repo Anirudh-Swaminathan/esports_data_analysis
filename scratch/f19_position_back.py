@@ -26,7 +26,7 @@ def scatter_position(x):
         if x == 'ST':
             return [272, 700]
         if x == 'GK':
-            return [272, 20]
+            return [272, 80]
         return [xpos[x[0]], ypos[x[1]]]
     ypos = dict()
     ypos['AM'] = 500
@@ -46,7 +46,7 @@ def scatter_position(x):
 
 def main():
     # load background image
-    img = plt.imread("high-resolution-soccer-grass-field-19318961.jpg")
+    img = plt.imread("Field.png")
     print(img.shape)
     fig, ax = plt.subplots()
     ax.imshow(img, extent=[0,800, 0,533])
@@ -71,11 +71,11 @@ def main():
         xyl = scatter_position(cin)
         plot_x.append(xyl[1])
         if xyl[1] < 400:
-            colors.append('blue')
+            colors.append('#7d3c98') # purple instead of blue
         elif xyl[1]<600:
-            colors.append('yellow')
+            colors.append('#239b56') # green instead of yellow
         else:
-            colors.append('firebrick')
+            colors.append('#e74c3c') # red instead of firebrick
         plot_y.append(xyl[0])
         markerSizes.append(counts[cin]*1000)
         ax.annotate(cin + "\n{:.2f}%".format(counts[cin]*100.0), (xyl[1], xyl[0]))
@@ -83,8 +83,18 @@ def main():
     print(plot_x)
     print(plot_y)
     ax.scatter(plot_x, plot_y, color=colors, s=markerSizes)
+    plt.tick_params(
+            axis='both',
+            which='both',
+            bottom=False,
+            top=False,
+            labelbottom=False,
+            left=False,
+            right=False,
+            labelleft=False
+            )
     plt.tight_layout()
-    plt.savefig('football_field_positions.png')
+    plt.savefig('football_field_positions_new.png')
     plt.show()
 
 

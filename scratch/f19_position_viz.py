@@ -74,7 +74,7 @@ def main():
         else:
             colors.append('#e74c3c') # red instead of firebrick
         plot_y.append(xyl[0])
-        ax.annotate("{}\n{}".format(posvals.loc[cin]['Overall'], posvals.loc[cin]['Name']), (xyl[1], xyl[0]))
+        ax.annotate("{}".format(posvals.loc[cin]['Position']), (xyl[1], xyl[0]))
     print(len(plot_x), len(plot_y))
     print(plot_x)
     print(plot_y)
@@ -90,7 +90,7 @@ def main():
             labelleft=False
             )
     plt.tight_layout()
-    plt.savefig('football_field_players_new.png')
+    plt.savefig('football_field_general.png')
     plt.show()
 
 
