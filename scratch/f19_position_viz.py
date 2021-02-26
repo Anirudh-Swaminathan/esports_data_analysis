@@ -74,7 +74,7 @@ def main():
         else:
             colors.append('#e74c3c') # red instead of firebrick
         plot_y.append(xyl[0])
-        ax.annotate("{}".format(posvals.loc[cin]['Position']), (xyl[1], xyl[0]))
+        ax.annotate("{}".format(posvals.loc[cin]['Position']), (xyl[1], xyl[0]), fontfamily='sans-serif', fontsize='xx-large')
     print(len(plot_x), len(plot_y))
     print(plot_x)
     print(plot_y)

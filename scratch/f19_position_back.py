@@ -78,7 +78,7 @@ def main():
             colors.append('#e74c3c') # red instead of firebrick
         plot_y.append(xyl[0])
         markerSizes.append(counts[cin]*1000)
-        ax.annotate(cin + "\n{:.2f}%".format(counts[cin]*100.0), (xyl[1], xyl[0]))
+        ax.annotate(cin + "\n{:.2f}%".format(counts[cin]*100.0), (xyl[1], xyl[0]), fontfamily='sans-serif', fontsize='xx-large')
     print(len(plot_x), len(plot_y))
     print(plot_x)
     print(plot_y)
