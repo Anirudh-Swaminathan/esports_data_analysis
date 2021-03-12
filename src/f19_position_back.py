@@ -8,6 +8,12 @@ from matplotlib import pyplot as plt
 def scatter_position(x):
     """
     Function to compute the x and y coordinates on background image given position string
+
+    Arguments:
+    x -- str; indicates one of 27 valid positions
+
+    Returns:
+    list of x, y location to scatter to
     """
     # weak asserts
     assert isinstance(x, str)
@@ -46,7 +52,7 @@ def scatter_position(x):
 
 def main():
     # load background image
-    img = plt.imread("Field.png")
+    img = plt.imread("../images/Field.png")
     print(img.shape)
     fig, ax = plt.subplots()
     ax.imshow(img, extent=[0,800, 0,533])
@@ -94,7 +100,7 @@ def main():
             labelleft=False
             )
     plt.tight_layout()
-    plt.savefig('football_field_positions_new.png')
+    plt.savefig('../images/football_field_positions_new.png')
     plt.show()
 
 
