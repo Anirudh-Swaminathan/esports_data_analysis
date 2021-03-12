@@ -3,6 +3,11 @@
 
 
 ### Dependencies ###
+Install dependencies
+
+  pip install requirements.txt
+
+
 Packages were used:
 * pandas
 * numpy
