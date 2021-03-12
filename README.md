@@ -1,15 +1,22 @@
 # esports_data_analysis
 
-<imgsrc=images/fifa.jpg>
+
 
 ### Dependencies ###
-All the packages that we use in our code.
+Packages were used:
+* pandas
+* numpy
+* seaborn
+* pyplot
+
+
 
 ### Usage ###
-How do we use our notebooks?
+All the data we used can be found in the following link:https://www.kaggle.com/karangadiya/fifa19
+
 
 ### Visualizations ###
-What did we do with our visualizations?
+All the code and clustering can be found in the notebooks file, and the images we generated are stored in the images file.
 
 ### Clustering ###
 What does clustering mean/how do we do it
