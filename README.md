@@ -5,7 +5,7 @@ This is the final project for ECE 143, Winter 2021 taken at UCSD.
 Our group, Group 26, consists of 4 members as follows alphabetically:-
 
  - Anirudh Swaminathan : Github [@Anirudh-Swaminathan](https://github.com/Anirudh-Swaminathan) : Email aswamina [at] ucsd [dot] edu
- - David Liau : Github [@david](https://github.com/Genjidegaulle) : Email dilau [at] ucsd [dot] edu
+ - David Liau : Github [@GenjideGaulle](https://github.com/Genjidegaulle) : Email dilau [at] ucsd [dot] edu
  - Hejin Liu : Github [@Hejin-Bill](https://github.com/Hejin-Bill) : Email hel025 [at] eng [dot] ucsd [dot] edu
  - Zhifeng Li : Github [@Hallizz](https://github.com/Hallizz) : Email zhl478 [at] ucsd [dot] edu
 
