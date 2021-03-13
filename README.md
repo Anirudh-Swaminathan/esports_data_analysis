@@ -12,7 +12,9 @@ Our group, Group 26, consists of 4 members as follows alphabetically:-
 ### Dependencies ###
 Install dependencies
 
-  pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 
 Packages were used:
