@@ -41,4 +41,6 @@ Feel free to download the data.csv file and change the directory to access it ap
 All the code and clustering can be found in the notebooks file, and the images we generated are stored in the images file.
 
 ### Clustering ###
-What does clustering mean/how do we do it
+We clustered all of the FIFA teams into 3 groups based off of the following fields: player salary, player age and player overall rating.
+These three groups segment clubs into the following categories: Championship-Contenders, Middle-of-the-Pack, and Developmental-Rosters.
+A video of our cluster visualization can be found within the "images" folder, or the interactive plot can be generated in "src/plot.py".
