@@ -20,6 +20,7 @@ Packages were used:
 * numpy
 * seaborn
 * matplotlib pyplot
+* sklearn
 
 
 
